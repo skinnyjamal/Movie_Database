@@ -10,11 +10,13 @@ namespace MovieManager
     {
         private const string FilePath = "movies.json";
         private List<Movie> movies;
+        public static int selectedIndex;
 
         public MovieManager()
         {
             InitializeComponent();
-            movies = LoadMovies();
+            movies = LoadMovies() ?? new List<Movie>();
+            RefreshMovieList();
         }
 
         private void Movielb_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,13 +28,21 @@ namespace MovieManager
                 Namelbl.Text = selectedMovie.Name;
                 Releaselbl.Text = selectedMovie.ReleaseDate.ToString("dd/MM/yyyy");
                 Genrelbl.Text = selectedMovie.Genre;
+                Synopsislbl.Text = selectedMovie.Synopsis;
+                selectedIndex = index;
             }
             else
             {
-                Namelbl.Text = string.Empty;
-                Releaselbl.Text = string.Empty;
-                Genrelbl.Text = string.Empty;
+                defualtView();
             }
+            RefreshMovieList();
+        }
+        public void defualtView()
+        {
+            Namelbl.Text = "------";
+            Releaselbl.Text = "------";
+            Genrelbl.Text = "------";
+            Synopsislbl.Text = "";
         }
 
         private void newMoviebtn_Click(object sender, EventArgs e)
@@ -69,10 +79,21 @@ namespace MovieManager
         private void RefreshMovieList()
         {
             Movielb.Items.Clear();
-            foreach (Movie movie in movies)
+            if (movies != null)
             {
-                Movielb.Items.Add(movie.Name);
+                foreach (Movie movie in movies)
+                {
+                    Movielb.Items.Add(movie.Name);
+                }
             }
+        }
+
+        private void delMoviebtn_Click(object sender, EventArgs e)
+        {
+            movies.Remove(movies[selectedIndex]);
+            defualtView();
+            SaveMovies();
+            RefreshMovieList();
         }
     }
 }

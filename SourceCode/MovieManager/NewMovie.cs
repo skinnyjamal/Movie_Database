@@ -8,6 +8,7 @@ namespace MovieManager
         public string Name { get; private set; }
         public DateTime ReleaseDate { get; private set; }
         public string Genre { get; private set; }
+        public string Synopsis { get; private set; }
 
         public NewMovie()
         {
@@ -19,6 +20,7 @@ namespace MovieManager
             Name = Nametb.Text;
             ReleaseDate = ReleaseDatedtp.Value;
             Genre = Genretb.Text;
+            Synopsis = Synopsistb.Text;
             DialogResult = DialogResult.OK;
         }
 
@@ -28,7 +30,8 @@ namespace MovieManager
             {
                 Name = Name,
                 ReleaseDate = ReleaseDate,
-                Genre = Genre
+                Genre = Genre,
+                Synopsis = Synopsis
             };
         }
     }

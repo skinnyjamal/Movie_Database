@@ -31,7 +31,7 @@ namespace MovieManager
         {
             this.Movielb = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Synopsislbl = new System.Windows.Forms.Label();
+            this.Synopsislbl = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Genrelbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +40,7 @@ namespace MovieManager
             this.Namelbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.newMoviebtn = new System.Windows.Forms.Button();
+            this.delMoviebtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@ namespace MovieManager
             this.Movielb.ItemHeight = 15;
             this.Movielb.Location = new System.Drawing.Point(12, 12);
             this.Movielb.Name = "Movielb";
-            this.Movielb.Size = new System.Drawing.Size(180, 274);
+            this.Movielb.Size = new System.Drawing.Size(180, 514);
             this.Movielb.TabIndex = 0;
             this.Movielb.SelectedIndexChanged += new System.EventHandler(this.Movielb_SelectedIndexChanged);
             // 
@@ -65,19 +66,20 @@ namespace MovieManager
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(206, 54);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 232);
+            this.groupBox1.Size = new System.Drawing.Size(573, 472);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movie Info";
             // 
             // Synopsislbl
             // 
-            this.Synopsislbl.AutoSize = true;
-            this.Synopsislbl.Location = new System.Drawing.Point(123, 125);
+            this.Synopsislbl.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Synopsislbl.Location = new System.Drawing.Point(27, 143);
             this.Synopsislbl.Name = "Synopsislbl";
-            this.Synopsislbl.Size = new System.Drawing.Size(37, 15);
-            this.Synopsislbl.TabIndex = 7;
-            this.Synopsislbl.Text = "------";
+            this.Synopsislbl.ReadOnly = true;
+            this.Synopsislbl.Size = new System.Drawing.Size(512, 308);
+            this.Synopsislbl.TabIndex = 11;
+            this.Synopsislbl.Text = "";
             // 
             // label4
             // 
@@ -148,7 +150,7 @@ namespace MovieManager
             // 
             // newMoviebtn
             // 
-            this.newMoviebtn.Location = new System.Drawing.Point(532, 12);
+            this.newMoviebtn.Location = new System.Drawing.Point(704, 12);
             this.newMoviebtn.Name = "newMoviebtn";
             this.newMoviebtn.Size = new System.Drawing.Size(75, 38);
             this.newMoviebtn.TabIndex = 2;
@@ -156,16 +158,28 @@ namespace MovieManager
             this.newMoviebtn.UseVisualStyleBackColor = true;
             this.newMoviebtn.Click += new System.EventHandler(this.newMoviebtn_Click);
             // 
+            // delMoviebtn
+            // 
+            this.delMoviebtn.Location = new System.Drawing.Point(623, 12);
+            this.delMoviebtn.Name = "delMoviebtn";
+            this.delMoviebtn.Size = new System.Drawing.Size(75, 38);
+            this.delMoviebtn.TabIndex = 3;
+            this.delMoviebtn.Text = "Delete Movie";
+            this.delMoviebtn.UseVisualStyleBackColor = true;
+            this.delMoviebtn.Click += new System.EventHandler(this.delMoviebtn_Click);
+            // 
             // MovieManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 294);
+            this.ClientSize = new System.Drawing.Size(801, 548);
+            this.Controls.Add(this.delMoviebtn);
             this.Controls.Add(this.newMoviebtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Movielb);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MovieManager";
-            this.Text = "Form1";
+            this.Text = "Movie Database Manager";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -182,9 +196,10 @@ namespace MovieManager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Namelbl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Synopsislbl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button newMoviebtn;
+        private System.Windows.Forms.Button delMoviebtn;
+        private System.Windows.Forms.RichTextBox Synopsislbl;
     }
 }
 
