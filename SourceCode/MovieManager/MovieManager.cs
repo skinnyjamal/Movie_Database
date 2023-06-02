@@ -39,6 +39,7 @@ namespace MovieManager
         }
         public void defualtView()
         {
+            selectedIndex= -1;
             Namelbl.Text = "------";
             Releaselbl.Text = "------";
             Genrelbl.Text = "------";
@@ -90,10 +91,34 @@ namespace MovieManager
 
         private void delMoviebtn_Click(object sender, EventArgs e)
         {
-            movies.Remove(movies[selectedIndex]);
-            defualtView();
-            SaveMovies();
-            RefreshMovieList();
+            if (selectedIndex>= 0 && selectedIndex < movies.Count)
+            {
+                movies.Remove(movies[selectedIndex]);
+                defualtView();
+                SaveMovies();
+                RefreshMovieList();
+            }
+            else
+            {
+                MessageBox.Show("Please select a movie to delete.", "No Movie Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void editMoviebtn_Click(object sender, EventArgs e)
+        {
+            if (selectedIndex >= 0 && selectedIndex < movies.Count)
+            {
+                Movie selectedMovie = movies[selectedIndex];
+                EditMovie editMovieForm = new EditMovie(selectedMovie);
+                if (editMovieForm.ShowDialog() == DialogResult.OK)
+                {
+                    Movie updatedMovie = editMovieForm.updatedMovie();
+                    movies[selectedIndex] = updatedMovie;
+                    defualtView();
+                    SaveMovies();
+                    RefreshMovieList();
+                }
+            }
         }
     }
 }

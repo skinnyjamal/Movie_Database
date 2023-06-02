@@ -55,3 +55,4 @@ C:\Users\Jamal\Desktop\TheWork\Movie_Database\SourceCode\MovieManager\obj\Debug\
 C:\Users\Jamal\Desktop\TheWork\Movie_Database\SourceCode\MovieManager\obj\Debug\net5.0-windows\MovieManager.pdb
 C:\Users\Jamal\Desktop\TheWork\Movie_Database\SourceCode\MovieManager\obj\Debug\net5.0-windows\MovieManager.genruntimeconfig.cache
 C:\Users\Jamal\Desktop\TheWork\Movie_Database\SourceCode\MovieManager\obj\Debug\net5.0-windows\ref\MovieManager.dll
+C:\Users\Jamal\Desktop\TheWork\Movie_Database\SourceCode\MovieManager\obj\Debug\net5.0-windows\MovieManager.EditMovie.resources
