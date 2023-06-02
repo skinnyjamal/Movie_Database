@@ -118,6 +118,10 @@ namespace MovieManager
                     SaveMovies();
                     RefreshMovieList();
                 }
+                else
+                {
+                    MessageBox.Show("Please select a movie to delete.", "No Movie Selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
