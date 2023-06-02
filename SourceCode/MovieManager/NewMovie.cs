@@ -1,36 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
 
 namespace MovieManager
 {
     public partial class NewMovie : Form
     {
-        public string name;
-        public string releaseDate;
-        public string genre;
-        public bool submit;
+        public string Name { get; private set; }
+        public DateTime ReleaseDate { get; private set; }
+        public string Genre { get; private set; }
+
         public NewMovie()
         {
             InitializeComponent();
-            submit = false;
         }
 
         private void Submitbtn_Click(object sender, EventArgs e)
         {
-            Nametb.Text = name;
-            string date = ReleaseDatedtp.Value.ToString("dd/MM/yyyy");
-            date = releaseDate;
-            Genretb.Text = genre;
-            submit = true;
-            
+            Name = Nametb.Text;
+            ReleaseDate = ReleaseDatedtp.Value;
+            Genre = Genretb.Text;
+            DialogResult = DialogResult.OK;
+        }
+
+        public Movie GetMovie()
+        {
+            return new Movie
+            {
+                Name = Name,
+                ReleaseDate = ReleaseDate,
+                Genre = Genre
+            };
         }
     }
 }

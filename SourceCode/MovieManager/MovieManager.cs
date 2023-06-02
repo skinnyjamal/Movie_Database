@@ -9,7 +9,8 @@ namespace MovieManager
     public partial class MovieManager : Form
     {
         private const string FilePath = "movies.json";
-        List<Movie> movies = new List<Movie>();
+        private List<Movie> movies;
+
         public MovieManager()
         {
             InitializeComponent();
@@ -19,25 +20,40 @@ namespace MovieManager
         private void Movielb_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = Movielb.SelectedIndex;
-            Namelbl.Text = movies[index].Name;
-            Releaselbl.Text = movies[index].ReleaseDate.ToString("DD/M/YYYY");
-            Genrelbl.Text = movies[index].Genre;
+            if (index >= 0 && index < movies.Count)
+            {
+                Movie selectedMovie = movies[index];
+                Namelbl.Text = selectedMovie.Name;
+                Releaselbl.Text = selectedMovie.ReleaseDate.ToString("dd/MM/yyyy");
+                Genrelbl.Text = selectedMovie.Genre;
+            }
+            else
+            {
+                Namelbl.Text = string.Empty;
+                Releaselbl.Text = string.Empty;
+                Genrelbl.Text = string.Empty;
+            }
         }
 
         private void newMoviebtn_Click(object sender, EventArgs e)
         {
             NewMovie newMovie = new NewMovie();
-            newMovie.ShowDialog();
-
+            if (newMovie.ShowDialog() == DialogResult.OK)
+            {
+                Movie movie = newMovie.GetMovie();
+                movies.Add(movie);
+                SaveMovies();
+                RefreshMovieList();
+            }
         }
 
-        public void SaveMovies(List<Movie> movies)
+        private void SaveMovies()
         {
             string json = JsonSerializer.Serialize(movies, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(FilePath, json);
         }
 
-        public List<Movie> LoadMovies()
+        private List<Movie> LoadMovies()
         {
             if (File.Exists(FilePath))
             {
@@ -50,5 +66,13 @@ namespace MovieManager
             }
         }
 
+        private void RefreshMovieList()
+        {
+            Movielb.Items.Clear();
+            foreach (Movie movie in movies)
+            {
+                Movielb.Items.Add(movie.Name);
+            }
+        }
     }
 }
