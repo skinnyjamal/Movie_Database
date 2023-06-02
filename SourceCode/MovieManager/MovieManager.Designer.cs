@@ -42,6 +42,7 @@ namespace MovieManager
             this.newMoviebtn = new System.Windows.Forms.Button();
             this.delMoviebtn = new System.Windows.Forms.Button();
             this.editMoviebtn = new System.Windows.Forms.Button();
+            this.Versionlbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -179,11 +180,22 @@ namespace MovieManager
             this.editMoviebtn.UseVisualStyleBackColor = true;
             this.editMoviebtn.Click += new System.EventHandler(this.editMoviebtn_Click);
             // 
+            // Versionlbl
+            // 
+            this.Versionlbl.AutoSize = true;
+            this.Versionlbl.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.Versionlbl.Location = new System.Drawing.Point(206, 12);
+            this.Versionlbl.Name = "Versionlbl";
+            this.Versionlbl.Size = new System.Drawing.Size(71, 15);
+            this.Versionlbl.TabIndex = 5;
+            this.Versionlbl.Text = "Version - 1.0";
+            // 
             // MovieManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 548);
+            this.Controls.Add(this.Versionlbl);
             this.Controls.Add(this.editMoviebtn);
             this.Controls.Add(this.newMoviebtn);
             this.Controls.Add(this.delMoviebtn);
@@ -195,6 +207,7 @@ namespace MovieManager
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,6 +226,7 @@ namespace MovieManager
         private System.Windows.Forms.Button delMoviebtn;
         private System.Windows.Forms.RichTextBox Synopsislbl;
         private System.Windows.Forms.Button editMoviebtn;
+        private System.Windows.Forms.Label Versionlbl;
     }
 }
 
