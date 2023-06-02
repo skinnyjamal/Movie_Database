@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace MovieManager
 {
-    class Movie
+    public class Movie
     {
-        public string name;
-        public string releaseDate;
-        public string genre;
-
-        public Movie(string mName, string mReleaseDate, string mGenre)
-        {
-            name = mName;
-            releaseDate = mReleaseDate;
-            genre = mGenre;
-        }
+        public string Genre { get; set; }
+        public string Name { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public string Synopsis { get; set; }
 
     }
 }
