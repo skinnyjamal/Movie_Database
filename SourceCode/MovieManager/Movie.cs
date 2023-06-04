@@ -8,6 +8,7 @@ namespace MovieManager
         public string Name { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string Synopsis { get; set; }
+        public double Rating { get; set; }
 
     }
 }

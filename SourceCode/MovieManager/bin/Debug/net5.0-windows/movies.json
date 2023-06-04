@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "Genre": "100",
+    "Name": "100",
+    "ReleaseDate": "2023-06-04T15:31:22.4108163+01:00",
+    "Synopsis": "1iuhslkahlksdhakshd;aksjdlkajsdklajslkdjalskdjalksdjkla",
+    "Rating": 2.67
+  },
+  {
+    "Genre": "202",
+    "Name": "202",
+    "ReleaseDate": "2023-06-04T15:31:55.622214+01:00",
+    "Synopsis": "ajkshdakjshdk;jashdjahsdjk",
+    "Rating": 10
+  }
+]

@@ -30,6 +30,10 @@
         {
             this.Synopsistb = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Ratingtb = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Genretb = new System.Windows.Forms.TextBox();
             this.ReleaseDatedtp = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +48,7 @@
             // Synopsistb
             // 
             this.Synopsistb.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Synopsistb.Location = new System.Drawing.Point(19, 145);
+            this.Synopsistb.Location = new System.Drawing.Point(19, 170);
             this.Synopsistb.Name = "Synopsistb";
             this.Synopsistb.Size = new System.Drawing.Size(512, 289);
             this.Synopsistb.TabIndex = 14;
@@ -52,6 +56,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.Ratingtb);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.Genretb);
             this.groupBox1.Controls.Add(this.ReleaseDatedtp);
@@ -60,9 +68,45 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 111);
+            this.groupBox1.Size = new System.Drawing.Size(518, 136);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(118, 107);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(24, 15);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "/10";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "label6";
+            // 
+            // Ratingtb
+            // 
+            this.Ratingtb.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Ratingtb.Location = new System.Drawing.Point(92, 104);
+            this.Ratingtb.Name = "Ratingtb";
+            this.Ratingtb.Size = new System.Drawing.Size(29, 23);
+            this.Ratingtb.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(6, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "My Rating";
             // 
             // label1
             // 
@@ -121,7 +165,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(19, 127);
+            this.label4.Location = new System.Drawing.Point(19, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 15);
             this.label4.TabIndex = 12;
@@ -129,7 +173,7 @@
             // 
             // Submitbtn
             // 
-            this.Submitbtn.Location = new System.Drawing.Point(233, 440);
+            this.Submitbtn.Location = new System.Drawing.Point(232, 466);
             this.Submitbtn.Name = "Submitbtn";
             this.Submitbtn.Size = new System.Drawing.Size(75, 23);
             this.Submitbtn.TabIndex = 11;
@@ -141,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 476);
+            this.ClientSize = new System.Drawing.Size(544, 501);
             this.Controls.Add(this.Synopsistb);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -167,5 +211,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Submitbtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox Ratingtb;
+        private System.Windows.Forms.Label label5;
     }
 }

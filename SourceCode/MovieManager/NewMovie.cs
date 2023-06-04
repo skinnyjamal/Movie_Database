@@ -9,6 +9,7 @@ namespace MovieManager
         public DateTime ReleaseDate { get; private set; }
         public string Genre { get; private set; }
         public string Synopsis { get; private set; }
+        public double Rating { get; private set; }
 
         public NewMovie()
         {
@@ -17,10 +18,14 @@ namespace MovieManager
 
         private void Submitbtn_Click(object sender, EventArgs e)
         {
-            Name = Nametb.Text;
+            Name = Nametb.Text.Trim();
             ReleaseDate = ReleaseDatedtp.Value;
-            Genre = Genretb.Text;
-            Synopsis = Synopsistb.Text;
+            Genre = Genretb.Text.Trim();
+            Synopsis = Synopsistb.Text.Trim();
+            double r = double.Parse(Ratingtb.Text.Trim());
+            r = Math.Clamp(r, 0.0f, 10.0f);
+            r = Math.Round(r, 2);
+            Rating= r;
             DialogResult = DialogResult.OK;
         }
 
@@ -31,7 +36,8 @@ namespace MovieManager
                 Name = Name,
                 ReleaseDate = ReleaseDate,
                 Genre = Genre,
-                Synopsis = Synopsis
+                Synopsis = Synopsis,
+                Rating = Rating
             };
         }
     }

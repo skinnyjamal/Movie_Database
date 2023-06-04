@@ -31,6 +31,8 @@ namespace MovieManager
         {
             this.Movielb = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Ratinglbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Genrelbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +60,8 @@ namespace MovieManager
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Ratinglbl);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.Genrelbl);
             this.groupBox1.Controls.Add(this.label3);
@@ -72,6 +76,26 @@ namespace MovieManager
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Movie Info";
+            // 
+            // Ratinglbl
+            // 
+            this.Ratinglbl.AutoSize = true;
+            this.Ratinglbl.Location = new System.Drawing.Point(399, 35);
+            this.Ratinglbl.Name = "Ratinglbl";
+            this.Ratinglbl.Size = new System.Drawing.Size(34, 15);
+            this.Ratinglbl.TabIndex = 13;
+            this.Ratinglbl.Text = "--/10";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(303, 35);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "My Rating";
             // 
             // label4
             // 
@@ -186,9 +210,9 @@ namespace MovieManager
             this.Versionlbl.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.Versionlbl.Location = new System.Drawing.Point(206, 12);
             this.Versionlbl.Name = "Versionlbl";
-            this.Versionlbl.Size = new System.Drawing.Size(71, 15);
+            this.Versionlbl.Size = new System.Drawing.Size(80, 15);
             this.Versionlbl.TabIndex = 5;
-            this.Versionlbl.Text = "Version - 1.0";
+            this.Versionlbl.Text = "Version - 1.0.1";
             // 
             // MovieManager
             // 
@@ -227,6 +251,8 @@ namespace MovieManager
         private System.Windows.Forms.RichTextBox Synopsislbl;
         private System.Windows.Forms.Button editMoviebtn;
         private System.Windows.Forms.Label Versionlbl;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Ratinglbl;
     }
 }
 

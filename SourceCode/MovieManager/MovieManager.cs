@@ -29,6 +29,7 @@ namespace MovieManager
                 Releaselbl.Text = selectedMovie.ReleaseDate.ToString("dd/MM/yyyy");
                 Genrelbl.Text = selectedMovie.Genre;
                 Synopsislbl.Text = selectedMovie.Synopsis;
+                Ratinglbl.Text = $"{selectedMovie.Rating}/10";
                 selectedIndex = index;
             }
             else
@@ -44,6 +45,7 @@ namespace MovieManager
             Releaselbl.Text = "------";
             Genrelbl.Text = "------";
             Synopsislbl.Text = "";
+            Ratinglbl.Text = "--/10";
         }
 
         private void newMoviebtn_Click(object sender, EventArgs e)
